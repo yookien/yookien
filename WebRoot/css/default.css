@@ -1,0 +1,618 @@
+/*
+  Email : yntyookien@gmail.com
+  Author: ntyookien
+  Http	: http://www.ntyookien.com
+*/
+body {
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 12px;
+	margin: 0px;
+	padding:0px;
+	background-color: #ffffff;
+	padding:12px;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+	color:#333; 
+	margin:4px 0 2px; 
+} 
+
+h1{
+	font-size:16.8px;
+	font-weight:bold;
+}
+
+h2{
+	font-size:14px;
+	font-weight:bold;
+	margin-top:8px;
+	margin-left:8px;
+	text-align: center;
+}
+
+h3{
+	font-size:13px;
+}
+
+td {
+	font-size: 12px;
+	font-family: Verdana, Arial, Sans-Serif;
+}
+
+.bold {
+	font-weight : bold;
+}
+
+.red {
+	color: #ff0000;
+}
+
+a {
+	cursor：pointer;
+}
+
+a:link, a:visited{
+  color: #00c;
+  color: #0065C9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+li p {
+	margin: 0;
+	padding: 0;
+}
+
+.mt16 { margin-top:16px; }
+.mt12 { margin-top:12px; }
+.mb16 { margin-bottom:16px; }
+.mb12 { margin-bottom:12px; }
+
+/* button */
+input.b {
+	margin-left: 6px; 
+	background-color: #e6e6e6; 
+	padding: 2px 4px 1px!important;
+	padding: 2px 4px 0px;
+	border-width: 1px;
+	border-style: solid;
+	border-color:#ccc #666 #666 #ccc;
+	cursor:pointer;
+	font-size:12px;
+}
+
+/* text button */
+input.tb {
+	margin: 0px;
+	margin-left: 4px; 
+	background-color: #f9f9f9; 
+	padding: 1px 1px !important;
+	/*padding: 2px 1px 0px;*/
+	padding:2px 1px 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color:#ccc #666 #666 #ccc;
+	cursor:pointer;
+	font-size:12px;
+	height:19px;
+}
+
+input.cb {
+	margin: 0px;
+	padding: 0px;
+	height: 19px;
+}
+
+input.t {
+	margin: 0px;
+	padding: 1px;
+	font-size: 13px;
+	border-width: 1px;
+	border-style: solid ;
+	border-color: #666 #ccc #ccc #666;
+}
+
+textarea {
+	margin: 0px;
+	padding: 2px;
+	font-size: 12px;
+	border-width: 1px;
+	border-style: solid ;
+	border-color: #666 #ccc #ccc #666;
+}
+
+select {
+	margin: 0px;
+	padding: 1px;
+	border-width: 1px;
+	border-style: solid ;
+	border-color: #666 #ccc #ccc #666;
+	font-size: 12px;
+}
+
+form {
+	padding:0px;
+	margin:0px;
+}
+
+img {
+	border:0px;
+}
+
+/* 
+	tl 文本左
+	tr 文本右
+*/
+.tl{
+	text-align: left;
+}
+.tr{
+	text-align: right;
+}
+
+.pl8{ padding-left: 8px; }
+.ml8{ margin-left: 8px; }
+
+a {
+	/*line-height: 120%;*/
+}
+
+.required{
+	color: red;
+}
+
+
+/* 
+    *********************************
+    * title1  * title2 * title3******
+	*********************************
+	*  list1  * list2 * list3 * ....*    
+	*********************************
+	*********************************
+ */
+.ltable {
+	border: 0px;
+	background-color:silver;
+	text-align:center;
+	width: 96%;
+	line-height: 150%;
+}
+.lt{
+	background-color:#f3f3f3;
+	text-align:left;
+	padding-left:8px;
+	height:26px;
+	font-weight : bold;
+	font-size: 13px;
+	color: #0060bf;
+}
+
+/* list  tr title */
+.ltrt {
+	background-color:#f9f9f9;
+	font-weight : bold;
+	height:26px;
+}
+.ltrv {
+	background-color:#FFFFFF;
+	height:26px;
+}
+
+/* 
+    **********************************
+	*         *  *****************   *      
+	*  title  *  *       content *   *
+	*         *  *****************   *
+	**********************************
+ */
+.mtable {
+	width: 96%;
+	border-bottom: 1px solid silver;
+	border-left: 1px solid silver;
+	line-height: 150%;
+}
+.mt{
+	background-color:#f8f8f8;
+	text-align:left;
+	padding-left:8px;
+	height:26px;
+	font-weight : bold;
+	font-size: 13px;
+	border-top: 1px solid silver;
+	border-right: 1px solid silver;
+	color: #0060bf;
+}
+/* model td title */
+.mtdt {
+	background-color:#FFFFFF;
+	width:24%;
+	text-align:left;
+	padding-left:8px;
+	border-top: 1px solid silver;
+	border-right: 1px solid silver;
+	height:26px;
+}
+
+/* model td value */
+.mtdv {
+	 background-color:#FFFFFF;
+	 text-align:left;
+	 border-top: 1px solid silver;
+	 border-right: 1px solid silver;
+	 padding-left:4px;
+}
+
+/* model td action */
+.mtda {
+	 background-color:#FFFFFF;
+	 text-align:center;
+	 margin:0px;
+	 background-color: #f9f9f9; 
+	 padding:4px;
+	 height:20px;
+	 line-height:150%;
+	 border-top: 1px solid silver;
+	 border-right: 1px solid silver;
+}
+
+
+.cr { clear:right; }
+.cl { clear:left; }
+.fl{ float: left; }
+.fr{ float: left; }
+.ftr { float: right; text-align: right; }
+.ftl{ float: left; 	text-align: left; }
+.frtl { float: right; text-align: left; }
+
+div { word-wrap: break-word; }
+
+/* ================================= */
+/*                                   */
+/*             top menu              */
+/*                                   */
+/* ================================= */
+#wrap {
+	background-color: #ffffff;
+	margin-top:16px;
+	min-width: 760px;
+	height: 100%;
+	min-width: 600px;
+	width: expression(document.body.clientWidth < 600? "600": "auto" );
+}
+
+/* ================================= */
+/*                                   */
+/*             top menu              */
+/*                                   */
+/* ================================= */
+#tmenu {
+	margin: 16px 2% 0px;
+	background-color: #f6f6f6;/*#f6f6f6;#fefafb;*/
+	padding: 4px;
+	border: 1px solid silver;
+	height:20px;
+	line-height:150%;
+}
+
+/* ================================= */
+/*                                   */
+/*             header                */
+/*                                   */
+/* ================================= */
+#header {
+	margin: 16px 2% 0px;
+	padding: 0px;
+	border-bottom: 1px solid silver;
+	height: 70px;
+}
+#header div#logo {
+	margin:0px;
+	padding:0px;
+	text-align: left;
+	float: left;
+}
+#header div#banner {
+	text-align: center;
+}
+
+/* ================================= */
+/*                                   */
+/*               quick               */
+/*                                   */
+/* ================================= */
+#quick {
+	margin: 16px 2% 0px;
+	background-color: #f9f9f9;
+	clear: both;
+	border: 1px solid silver;
+	height:16px;
+	padding:4px;
+	line-height: 150%;
+}
+
+/* ================================= */
+/*                                   */
+/*               footer              */
+/*                                   */
+/* ================================= */
+/* body -- footer */
+#footer {
+	margin:16px 2% 0px;
+	border-top: 1px dashed silver ;
+	clear: both;
+}
+
+#copyleft {
+	font-size: 80%;
+	padding-bottom: 20px;
+	padding-top: 10px;
+	text-align: center;	
+}
+
+/* ================================= */
+/*                                   */
+/*			 box model	             */
+/*                                   */
+/* ================================= */
+/*     
+    ********************************** 
+    *             title              *  
+    **********************************
+    *								 *  
+	*			 content			 *
+	*								 * 
+	**********************************
+ */
+.box1 {
+	margin:16px 2% 0px;
+	padding: 0px;
+	border: 1px solid silver;
+	clear: both;
+}
+.box1 .title {
+	margin:0px;
+	background-color: #f8f8f8; /*#f6f6f6*/;
+	padding: 4px;
+	padding-left:6px;
+	font-size: 12px;
+	font-weight: bold;
+	height:16px;
+	line-height: 150%;
+	color: #0060bf;/*#0060bf;*/
+}
+.box1 .content{
+	margin:0px;
+	padding: 0px;
+	border-top: 1px solid silver;
+	clear: both;
+}
+
+/* 
+	*								 *
+    *  ***********  ***************  *  
+	*  *    ftl  *  *     ftr     *  *
+	*  ***********  ***************  *
+	*								 *	
+ */
+.box2 {
+	margin:0px 2% 0px;
+	padding: 0px;
+	border-left: 1px solid silver;
+	border-right: 1px solid silver;
+	clear: both;
+}
+.box2 .right {
+	float: right;
+	text-align: left;
+}
+.box2 .left{
+	float: left; 
+	text-align: left;
+}
+
+/* 
+    ***********************
+    *       other         *
+	***********************
+	*		  box3        *
+	***********************
+ */
+.box3 {
+	margin:0px;
+	background-color: #f9f9f9; /*#fefafb;*/
+	padding:4px;
+	height:20px;
+	line-height:150%;
+	clear:both;
+}
+/* ibox -- inputbox it -- inputtitle iv -- inputvalue*/
+/* 
+    **********************************
+	*         *  *****************   *      
+	*  title  *  *       content *   *
+	*         *  *****************   *
+	**********************************
+ */
+.ibox {
+	margin:0px;
+	border-bottom: 1px solid silver;
+	height:26px;
+	clear:both;
+	line-height:150%;
+}
+.ibox .it {
+	margin:0px;
+	padding:5px 8px 3px;
+	float:left;
+	width:20%;
+	height:18px;
+}
+.ibox .iv {
+	margin:0px;
+	padding:4px 4px;
+	padding-left:8px;
+	border-left: 1px solid silver;
+	float:left;
+	height:18px;
+}
+
+/* 
+    ***********************
+	*        content      *
+	***********************
+ */
+.box4 {
+	margin: 16px 2% 0px;
+	background-color: #f9f9f9; /*#fefafb;*/
+	padding: 4px;
+	border: 1px solid silver;
+	height: 22px;
+	line-height: 150%;
+	clear:both;
+}
+
+/* 
+    *********************************
+    *********************************
+	*  list1  * list2 * list3 * ....*    
+	*********************************
+	*********************************
+ */
+
+.lbox1 {
+	 border-top:1px solid silver;
+	 clear:both;
+	 height:26px;
+}
+.lrbox {
+	float:right;
+	width:100%;
+	text-align:center;
+	height:26px;
+	line-height:150%;
+}
+.lrbox .d {
+	margin:0px;
+	padding:4px 0px;
+	text-align:center;
+	border-left:1px solid silver;
+	height:18px;
+	line-height:150%;
+	float:left;
+}
+
+.llbox {
+	margin:0px;
+	padding:4px 2px;
+	padding-left: 4px;
+	float:left;
+	text-align:center;
+	border-right:1px solid silver;
+	height:18px;
+	line-height:150%;
+}
+
+/* 
+	**********************************
+    *  ***********  ***************  *  
+	*  *   ftl   *  *      ftr    *  *
+	*  ***********  ***************  *
+	**********************************
+ */
+.box5 {
+	margin:16px 2% 0px ;
+	background-color: #f8f8f8 ;
+	padding: 4px 0px ;
+	border: 1px solid silver ;
+	height:18px ;
+	line-height:150% ;
+	clear: both ;
+}
+
+/**  other **/
+.dashed {
+	margin-top:16px;
+	/*background-color:#f9f9f9;*/
+	padding:0px 10px 10px;
+	border:1px dashed #ccc;
+}
+
+/* margin-top quick's height */
+.mt{
+	 margin-top:8px;
+}
+
+.pl{
+	padding-left:8px;
+}
+
+.remark{
+	 margin-left:6px;
+	 color: red;
+}
+
+.upload {
+	margin: 0px;
+	margin-left: 4px; 
+	background-color: #f9f9f9; 
+	padding: 1px 1px !important;
+	/*padding: 2px 1px 0px;*/
+	padding:2px 1px 3px;
+	/*border-width: 1px;
+	border-style: solid;
+	border-color:#ccc #666 #666 #ccc;*/
+	border:0px;
+	color: red;
+	cursor:pointer;
+	font-size:12px;
+	height:22px;
+}
+
+.help-tooltip{
+	position: absolute;
+	width: 180px;
+	border: 1px solid gray;
+	padding: 7px;
+	background-color: lightyellow;
+	visibility: hidden;
+	z-index: 1000;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135);
+}
+
+#dhtmltooltip{
+	position: absolute;
+	left: -300px;
+	width: 150px;
+	border: 1px solid gray;
+	padding: 7px;
+	background-color: lightyellow;
+	visibility: hidden;
+	z-index: 100;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+#dhtmlpointer{
+	position:absolute;
+	left: -300px;
+	z-index: 101;
+	visibility: hidden;
+}
+.pagination {
+	clear:both;
+	height:26px; 
+	margin:4px 2% 0px;
+	padding: 0px;
+}
+.pg_right{
+	border:1px dashed #ccc;
+	float:right;
+	margin:0px;
+	height:18px;
+	padding:4px;
+	line-height:150%;
+}
+

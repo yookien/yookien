@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BadWord">
+
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<typeAlias alias="badWord" type="com.meikai.common.model.BadWord" />
+	
+	<!-- 
+	<cacheModel id="badWordCache" type="OSCACHE">
+		<flushInterval hours="24"/>
+		<flushOnExecute statement="addBadWord"/>
+		<flushOnExecute statement="deleteBadWord"/>
+		<flushOnExecute statement="updateBadWord"/>
+		<property name="size" value="100" />
+	</cacheModel>
+	 -->
+	
+	<resultMap id="result" class="badWord">
+		<result property="badWordId" column="BAD_WORD_ID" />
+	    <result property="badWord" column="BAD_WORD" />
+	    <result property="replaceWord" column="REPLACE_WORD" />	   
+	</resultMap>	
+		
+	
+	<!-- 通过过滤词ID取得该词对象 -->
+	<select id="getBadWordById" parameterClass="int" resultMap="result">
+		SELECT 
+			   BAD_WORD_ID,BAD_WORD,REPLACE_WORD
+		FROM 
+			   T_BAD_WORD
+		WHERE	   
+				T_BAD_WORD.BAD_WORD_ID=#value#
+	</select>
+	
+	<!-- 通过过滤词取得该词对象	 -->
+	<select id="getBadWord" parameterClass="badWord" resultMap="result">
+		SELECT 
+			   BAD_WORD_ID,BAD_WORD,REPLACE_WORD
+		FROM 
+			   T_BAD_WORD
+		<dynamic prepend="where">						
+			<isNotNull prepend="and" property="badWord">BAD_WORD=#badWord#</isNotNull>
+			<isNotNull prepend="and" property="replaceWord">REPLACE_WORD=#replaceWord#</isNotNull>
+		</dynamic>
+	</select>
+	
+	<!-- 计算所有记录条数 -->
+	<select id="countAllBadWords"  parameterClass="badWord" resultClass="int">
+		SELECT 
+				count(BAD_WORD_ID)
+		FROM 
+			   T_BAD_WORD
+		where 
+			BAD_WORD like #badWord#
+	</select>	
+	
+	<!-- 查询所有过滤单词（带分页） -->	  
+	<select id="getBadWords"  resultMap="result">
+		SELECT 
+			   BAD_WORD_ID,BAD_WORD,REPLACE_WORD
+		FROM 
+			   T_BAD_WORD 
+		where 
+		BAD_WORD like #badWord#
+		LIMIT  
+				#pagination.start#,#pagination.offset#
+	</select>
+	
+	
+	<!-- 查询所有过滤单词 -->	  
+	<select id="getAllBadWords" resultMap="result">
+		SELECT 
+			   BAD_WORD_ID,BAD_WORD,REPLACE_WORD
+		FROM 
+			   T_BAD_WORD
+	</select>	
+	
+	
+	<!-- 插入过滤单词 -->
+	<insert id="addBadWord" parameterClass="badWord">
+		INSERT INTO
+			T_BAD_WORD(BAD_WORD,REPLACE_WORD)
+		VALUES
+			(#badWord#,#replaceWord#)
+	</insert>
+	
+	<!-- 更新过滤单词 -->
+	<update id="updateBadWord" parameterClass="badWord">
+		UPDATE
+			T_BAD_WORD
+		SET
+			BAD_WORD=#badWord#,
+			REPLACE_WORD=#replaceWord#			
+		WHERE
+			BAD_WORD_ID=#badWordId#
+	</update>	
+	
+	<!-- 删除过滤单词 -->
+	<delete id="deleteBadWord" parameterClass="int">
+		DELETE FROM T_BAD_WORD WHERE BAD_WORD_ID=#badWordId#
+	</delete>
+	
+</sqlMap>

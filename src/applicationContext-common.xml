@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"
+	default-autowire="autodetect">
+	
+	<bean id="matchMethodPropReq" class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="update*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,-ServiceException</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,-ServiceException</prop>
+				<prop key="service*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,-ServiceException</prop>
+				<prop key="add*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,-ServiceException</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,readOnly</prop>
+				<prop key="test*">PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ,-ServiceException</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="matchInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="transactionAttributeSource" ref="matchMethodPropReq" />
+	</bean>
+	
+	<bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<list>
+				<idref local="matchInterceptor" />
+			</list>
+		</property>
+		<property name="beanNames">
+			<list>
+				<idref local="badWordService"/>
+			</list>
+		</property>
+	</bean>	
+	
+	<!-- / badword -->	
+	<bean id="badWordManageAction"  class="com.meikai.common.web.action.BadWordManageAction"/>
+	<bean id="badWordInfoAction"  class="com.meikai.common.web.action.BadWordInfoAction"/>
+	<bean id="badWordListAction"  class="com.meikai.common.web.action.BadWordListAction"/>
+	<bean id="badWordDao" class="com.meikai.common.dao.impl.BadWordDaoImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>			
+	<bean id="badWordService" class="com.meikai.common.service.impl.BadWordServiceImpl"/>
+	<!-- badword / -->
+	
+	
+	<!-- service bean设置 -->
+	<bean id="homepageClientService" class="com.meikai.common.service.impl.HomepageClientServiceImpl">
+		<property name="homepageService">
+			<ref bean="homepageService" />
+		</property>
+	</bean>
+
+	<!-- 设置客户端访问服务端的bean -->
+	<jaxws:client id="homepageService" serviceClass="com.meikai.common.service.HomepageService"
+		address="http://10.0.0.73:8080/SMPESB/soap/HomepageAuthentification">
+	</jaxws:client>
+	
+	
+</beans>

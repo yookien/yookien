@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms> 
+	
+	<form id="badWordForm">
+		<item name="badWord" dataType="Require" msg="原词不能为空" />
+		<item name="replaceWord" dataType="Require" msg="替换词不为空" />		
+	</form>	
+	
+</forms>
