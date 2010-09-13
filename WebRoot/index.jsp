@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <div align="center"><h2>This is a demo</h2></div><br />
+  <div align="center"><h2>This is a demo test</h2></div><br />
    <div align="center"><a href="admin/createbadWord-open.do"><h3>过滤词的CRUB操作</h3></a></div>
   </body>
 </html>
